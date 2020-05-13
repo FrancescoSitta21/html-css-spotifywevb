@@ -10,8 +10,13 @@
  background: lightgreen;
  float: left;
 }
+
+.install ul {
+  margin-top: 410px;
+  list-style: none;
+}
 .header-menu {
- height: 70px;
+ height: 80px;
  background: lightcoral;
 }
 .playlist-menu {
