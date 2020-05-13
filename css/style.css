@@ -1,50 +1,46 @@
 * {
+ padding: 0;
  margin: 0;
  box-sizing: border-box;
  font-family: 'roboto';
-}
-/*struttura base*/
-.menu-logo {
- height: calc(100vh - 100px);
- width: 200px;
- background: lightgreen;
- float: left;
+ height: 100%
 }
 
-.install ul {
-  margin-top: 410px;
-  list-style: none;
+/*struttura base*/
+.container {
+  height: 100vh;
+  width: 100%;
+  background-color: yellow;
+  position: absolute;
 }
-.header-menu {
- height: 80px;
- background: lightcoral;
+
+.sidebar {
+  height: 100%;
+  width: 20vh;
+  background-color: green;
+  color: white;
+  position: absolute;
 }
-.playlist-menu {
- height: 300px;
- background: lightgrey;
- overflow-y: auto;
+
+.logo {
+  height: 10%;
+  width: 100%;
+  background-color: pink;
+  position: relative;
 }
-/*inizio base sviluppo*/
-.sviluppo {
- width: calc(100% - 200px);
- background-color: blue;
- height: calc(100vh - 100px);
- float: left;
- overflow-y: auto;
+
+.home {
+  height: 100%;
+  width: 100%;
+  background-color: red;
 }
-.upgrade {
- background: yellow;
- position: fixed;
- top: 0;
- width: 100%;
- height: 50px;
-}
-/*inizio footer*/
-footer {
- height: 100px;
- width: 100%;
- background-color: red;
- float: left;
- position: fixed;
- bottom: 0;
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 20vh;
+  width: 1733px;
+  height: 80px;
+  background-color: lightgrey;
+
 }
