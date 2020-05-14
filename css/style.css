@@ -1,46 +1,221 @@
-* {
- padding: 0;
- margin: 0;
- box-sizing: border-box;
- font-family: 'roboto';
- height: 100%
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+/* fine reset */
 
-/*struttura base*/
-.container {
-  height: 100vh;
-  width: 100%;
-  background-color: yellow;
-  position: absolute;
-}
-
-.sidebar {
-  height: 100%;
-  width: 20vh;
-  background-color: green;
+/* regole generali */
+body{
+  font-family: 'Montserrat', sans-serif;
   color: white;
-  position: absolute;
 }
-
-.logo {
-  height: 10%;
+main {
+  height: calc( 100vh - 110px);
   width: 100%;
-  background-color: pink;
-  position: relative;
 }
+ul {
+  list-style-type: none;
+}
+h2 {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+span{
+  padding-left: 10px;
+}
+p:hover, h1:hover, a:hover {
+  color: red;
+}
+/* fine regole generali */
 
-.home {
+/* macrosezioni */
+.ms_wrapper {
+  height: 100vh;
+}
+.ms_sidebar {
+  float: left;
+  width: 230px;
   height: 100%;
-  width: 100%;
-  background-color: red;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 20vh;
-  width: 1733px;
-  height: 80px;
-  background-color: lightgrey;
+  background-color: #000;
 
 }
+.ms_content {
+  float: left;
+  width: calc(100% - 230px);
+  height: 100%;
+  min-width: 200px;
+  background-color: #141923;
+  padding-top: 100px;
+  overflow: hidden;
+  overflow: scroll;
+}
+/* fine layout */
+
+/* classi generali */
+.ms_sidebar-item a{
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
+li:not(active){
+  padding-left: 20px;
+  padding-top:10px;
+}
+.ms_active {
+  border-left: 5px solid #adff30;
+}
+
+.ms_add-play {
+  font-size: 40px;
+  vertical-align: middle;
+}
+.ms_sidebar, .ms_playlist-container, .ms_navigation-left {
+  overflow: hidden;
+}
+
+/* classi generali */
+/* hover */
+li a:hover, span a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+/* hover */
+
+/* main */
+/* sidebar */
+.ms_sidebar >.ms_logo {
+  height: 100px;
+}
+.ms_logo img {
+  width: 170px;
+  padding: 30px 5px 25px 20px;
+  /* margin: 10px 20px; */
+}
+.ms_sidebar >.ms_navigation-left {
+  height: 120px;
+}
+
+.ms_navigation-left img {
+  width: 30px;
+  vertical-align: middle;
+  margin: 0px;
+}
+.ms_playlist-container {
+  height: calc(100vh - 410px);
+}
+.ms_sidebar-item.ms_playlist-container  >h2, i {
+  padding-left: 20px;
+}
+.ms_sidebar-item.ms_playlist-container span a{
+  padding-left: 5px;
+  font-size: 16px;
+}
+.ms_playlist {
+  height: 60%;
+  overflow-y: auto;
+}
+.ms_sidebar-item hr {
+  text-align: center;
+  margin: 8px 10px;
+}
+.ms_sidebar-item.ms_bottom-side {
+  padding-left: 20px;
+}
+.ms_bottom-side img {
+  margin-right: 5px;
+}
+.ms_bottom-side .ms_install img{
+  width: 15px;
+}
+.ms_bottom-side .ms_account img {
+  width: 25px;
+  border-radius: 50%;
+  background-color: grey;
+}
+.ms_bottom-side .ms_account a{
+  color: #ffff;
+  font-weight: bold;
+}
+/* fine sidebar */
+
+/* content */
+.ms_top-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 230px);
+  height: 100px;
+  background-color: rgba(0,0,0,.4);
+  color: white;
+}
+
+.ms_upgrade-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 90px;
+  padding-right: 25px;
+
+}
+.ms_upgrade-flex h3 {
+  border: 1px solid white;
+  border-radius: 19px;
+  font-size: 11px;
+  padding: 13px 24px;
+}
+.ms_upgrade-flex h3:hover {
+  background-color: lightgreen;
+  color: black;
+  font-style: bold;
+}
+/* fine content */
+
+/*end  main */
+/* footer */
+.ms_player-bottom {
+  min-height: 110px;
+  background-color: #282828;
+  }
+/* end footer */
+
+/* media query */
+/* formato xs */
+@media all and (max-width:767px) {
+  .ms_sidebar {
+    width: 100px;
+    height: 100%;
+  }
+    /* layout */
+  .ms_content, .ms_top-fixed {
+    width: calc(100% - 100px);
+  }
+  .ms_menu-xs {
+    width: 50px;
+  }
+  .ms_top-fixed {
+    height: 100px;
+  }
+  /* siderbar */
+.ms_logo-xs {
+  padding: 5px 20px;
+
+}
+  .ms_logo-xs img {
+    width: 35px;
+  }
+}
+}
+/* da cancellare */
+.ms_box {
+  height: 300px;
+  background-color: #141923;
+  border: 1px solid white;
+}
+.box1 {
+  height: 40px;
+  width: 40px;
+  background-color: red
+}
+/* da cancellare */
