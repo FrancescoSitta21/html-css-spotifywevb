@@ -1,12 +1,13 @@
 *{
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 /* fine reset */
 
 /* regole generali */
 body{
+  font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   color: white;
 }
@@ -20,13 +21,26 @@ ul {
 h2 {
   font-size: 15px;
   font-weight: bold;
-  text-transform: uppercase;
 }
+h5{
+ color: grey;
+ font-size: 13px;
+}
+
+a {
+  text-decoration: none;
+
+}
+a:hover {
+  text-decoration: none;
+  color:white;
+}
+
 span{
   padding-left: 10px;
 }
 p:hover, h1:hover, a:hover {
-  color: red;
+  color: #fff;
 }
 /* fine regole generali */
 
@@ -35,22 +49,26 @@ p:hover, h1:hover, a:hover {
   height: 100vh;
 }
 .ms_sidebar {
-  float: left;
+  float:left;
   width: 230px;
   height: 100%;
   background-color: #000;
-
 }
+
 .ms_content {
   float: left;
   width: calc(100% - 230px);
   height: 100%;
   min-width: 200px;
-  background-color: #141923;
+  background-color: #131923;
   padding-top: 100px;
   overflow: hidden;
-  overflow: scroll;
+  overflow: auto;
 }
+
+.ms_section {
+  margin-top: 24px;
+  margin-bottom: 45px;}
 /* fine layout */
 
 /* classi generali */
@@ -58,30 +76,36 @@ p:hover, h1:hover, a:hover {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
 }
+
 li:not(active){
   padding-left: 20px;
   padding-top:10px;
 }
+
 .ms_active {
-  border-left: 5px solid #adff30;
+  border-left: 2px solid #adff30;
 }
 
 .ms_add-play {
   font-size: 40px;
   vertical-align: middle;
 }
+
 .ms_sidebar, .ms_playlist-container, .ms_navigation-left {
   overflow: hidden;
 }
 
+.ms_round-image img {
+  border-radius: 50%;
+}
+
 /* classi generali */
+
 /* hover */
-li a:hover, span a:hover {
-  text-decoration: none;
+span:hover, a:hover{
   color: #fff;
 }
 /* hover */
-
 /* main */
 /* sidebar */
 .ms_sidebar >.ms_logo {
@@ -99,7 +123,8 @@ li a:hover, span a:hover {
 .ms_navigation-left img {
   width: 30px;
   vertical-align: middle;
-  margin: 0px;
+  /* margin: 5px 10px; */
+
 }
 .ms_playlist-container {
   height: calc(100vh - 410px);
@@ -120,7 +145,7 @@ li a:hover, span a:hover {
   margin: 8px 10px;
 }
 .ms_sidebar-item.ms_bottom-side {
-  padding-left: 20px;
+  padding-left: 10px;
 }
 .ms_bottom-side img {
   margin-right: 5px;
@@ -134,7 +159,7 @@ li a:hover, span a:hover {
   background-color: grey;
 }
 .ms_bottom-side .ms_account a{
-  color: #ffff;
+  color: #fff;
   font-weight: bold;
 }
 /* fine sidebar */
@@ -148,6 +173,7 @@ li a:hover, span a:hover {
   height: 100px;
   background-color: rgba(0,0,0,.4);
   color: white;
+  z-index: 3;
 }
 
 .ms_upgrade-flex{
@@ -155,8 +181,8 @@ li a:hover, span a:hover {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  height: 90px;
-  padding-right: 25px;
+  height: 100px;
+  padding-right: 20px;
 
 }
 .ms_upgrade-flex h3 {
@@ -164,23 +190,118 @@ li a:hover, span a:hover {
   border-radius: 19px;
   font-size: 11px;
   padding: 13px 24px;
+  text-transform: uppercase;
 }
 .ms_upgrade-flex h3:hover {
-  background-color: lightgreen;
-  color: black;
-  font-style: bold;
+  transform: scale(1.2)
+}
+/* category menu */
+
+.ms_category {
+  width: 100%;
+  text-align: center;
+}
+
+.ms_list-category li  {
+  display: inline-block;
+  margin: 10px;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.ms_list-category li:last-child  {
+  margin-right: 0;
+}
+
+.ms_list-category li a {
+  color: grey;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ms_list-category li a:hover{
+color: #fff;
+}
+
+.ms_list-category li:hover {
+    position:relative;
+    display:inline-block;
+}
+
+.ms_list-category li::after{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:100%;
+    margin: 2px auto;
+    width: 25%;
+    height:3px;
+    background-color: green;
+}
+
+/* album row */
+.ms_wrap {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.ms_title {
+  padding-left: 10px;
+}
+
+.ms_title h2 {
+  font-size: 25px;
+}
+
+.ms_card {
+  width: calc(100% / 6);
+}
+
+.ms_cover {
+  padding: 10px;
+  position: relative;
+}
+
+.ms_cover img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ms_card:hover .ms_cover img {
+  opacity: 0.3;
+}
+
+.ms_cover .ms_overlay .play {
+  display: none;
+  font-size: 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  }
+
+.ms_card:hover .ms_cover .ms_overlay .play{
+  display: block;
+}
+.ms_card .ms_description h4{
+  font-size: 15px;
+  font-weight: bold;
 }
 /* fine content */
 
 /*end  main */
+
 /* footer */
 .ms_player-bottom {
   min-height: 110px;
-  background-color: #282828;
+  background-color: #292929;
   }
 /* end footer */
 
+
 /* media query */
+
 /* formato xs */
 @media all and (max-width:767px) {
   .ms_sidebar {
@@ -200,22 +321,42 @@ li a:hover, span a:hover {
   /* siderbar */
 .ms_logo-xs {
   padding: 5px 20px;
-
 }
   .ms_logo-xs img {
     width: 35px;
   }
+
+  .ms_wrap {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .ms_card {
+    flex-basis: 50%;
+  }
 }
+
+/* sm devices */
+@media all and (min-width:768px) and (max-width:991px) {
+  .ms_wrap {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .ms_card {
+    width: calc(100% / 2);
+
+  }
 }
-/* da cancellare */
-.ms_box {
-  height: 300px;
-  background-color: #141923;
-  border: 1px solid white;
-}
-.box1 {
-  height: 40px;
-  width: 40px;
-  background-color: red
+
+/* md device */
+@media all and (min-width:992px) and (max-width:1199px){
+  .ms_wrap {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .ms_card {
+    width: calc(100% / 4);
+  }
 }
 /* da cancellare */
