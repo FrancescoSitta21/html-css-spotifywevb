@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>SpotifyWeb</title>
 
+  <body>
   <!--  link css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
         <!-- fine barra di navigazione -->
 
         <!-- inizio playlist -->
-        <div class="ms_sidebar-item ms_playlist-container">
+        <div id="ms_sidebar-item ms_playlist-container">
           <h2>PLAYLIST</h2>
           <i class="far fa-plus-square ms_add-play"></i>
           <span> <a href="#"> Crea playlist</a> </span>
@@ -127,7 +127,7 @@
       <!-- section ascoltati di recente -->
       <section id="recenti" class="ms_recently ms_section">
         <!-- titolo section -->
-        <div class="ms_title">
+        <div id="ms_title">
           <h2>Recently Played</h2>
         </div>
         <!-- contentiroe generale -->
@@ -159,6 +159,7 @@
               <h5>Kyle Dixon & Michael Stein</h5>
             </div>
           </div>
+
           <!-- card acquietplace -->
           <div class="ms_card">
             <div class="ms_cover">
@@ -172,6 +173,7 @@
               <h5>Subtitle</h5>
             </div>
           </div>
+
           <!-- card split  -->
           <div class="ms_card">
             <div class="ms_cover">
@@ -305,5 +307,6 @@
   </footer>
   <!-- fine wrapper -->
 </div>
+<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
